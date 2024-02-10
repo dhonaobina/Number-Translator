@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>2. Video: An Introduction to Retrieving DOM elements (it_apcgjsdj_08_enus_02)</h1>
+    <p>In this video, learn how to use the document object to retrieve individual elements of your web page and access their values and properties.
+use the document object to retrieve individual elements of your web page and access their values and properties
+[Video description begins] Topic title: An Introduction to Retrieving DOM elements. Your host for this session is Kishan Iyer. [Video description ends]
+
+Most of the demos in this learning path so far, have focused on the features available in the JavaScript programming language. The ultimate goal of learning JavaScript though, is to influence the behaviour of your web application.
+
+While JavaScript can be used on the server side of a web app, specifically using the Node.js framework. All the demos of this learning path have focused on running JavaScript from a web browser. That is on the client side of a web app. We will now see how JavaScript can be used to control the Document Object Model, or DOM of a webpage.
+
+[Video description begins] The screen displays the Sublime text editor. [Video description ends]
+
+For this demo, we will make use of two different files, an HTML file and a JS file. We begin though by defining the HTML.
+
+[Video description begins] The host highlights the code from line 3 to line 7. Line 3 reads as: <head>. Line 5 reads as: <meta charset="UTF-8">. Line 7 reads as: </head> [Video description ends]
+
+So you see here that it already contains a few elements. There is a head element, as well as a body element, which includes an h2 header.
+
+[Video description begins] He highlights the following codes on lines 9, 13 and 15. Line 9: <body> Line 13: <script src = "DOMElementsHtmlCss.js"></script> Line 15: </body> [Video description ends]
+
+And within the script tag, we point this HTML to a related JavaScript source file.
+
+[Video description begins] He highlights the code on line 11 that reads as: <h2> DOM elements, HTML And CSS </h2> [Video description ends]
+
+When an HTML page is loaded into a web browser, it is first passed and then its elements are rendered in a tree like structure, which is the document object model. It is that DOM, which JavaScript has the ability to manipulate.
+
+[Video description begins] The host highlights the following code on line 13: <script src = "DOMElementsHtmlCss.js"> </script> [Video description ends]
+
+So what elements can we include within this HTML? Well, in addition to the h2 element, I am just going to add in a few more. There is a paragraph element at the top which has an id of jstitle and the text for this just says JavaScript.
+
+[Video description begins] He highlights the code on line 13 that reads as: <p id = "jstitle"> JavaScript </p> [Video description ends]
+
+This is followed by a bold element so the text within that will appear in bold font.
+
+[Video description begins] He highlights the following code on line 15: <b>Finding HTML element using the tag name</b> [Video description ends]
+
+And this is followed by a paragraph element with the id of jstext. And you observe that it contains the text, JavaScript is very easy to learn.
+
+[Video description begins] He highlights the following code on line 17: <p = id= "jstext"><i>JavaScript is <b>very</b> easy to <b>learn</b></i></p> [Video description ends]
+
+However, this is structured in such a way that this paragraph has a few child elements. There is the i element for italic text. And within that, there are two bold elements which contain the text, very and learn. Next, we have an i element to which we apply the class jsdescription.
+
+[Video description begins] He highlights the following code on line 19: <i class = "jsdescription"> JavaScript is a programming language</i> [Video description ends]
+
+Then, there is an h2 element with the id of jsstyled, and we apply a style where there is a red color for the text JavaScript.
+
+[Video description begins] He highlights the following code on line 21: <h2 id ="jsstyled" style = "color : red">JavaScript</h2> [Video description ends]
+
+All of these elements are those which we will access from our JavaScript source file, and we will play around with them. We're not quite done with the elements, however. So right after the h2 element, I'm just going to add in a button. And you can see from its onClick attribute, that it has been set to a particular JavaScript operation.
+
+[Video description begins] He highlights the following code on lines 24 and 25: onclick="document.getElementById('jsstyled').style.color = 'green' "> Click Me!</button> [Video description ends]
+
+So we can directly embed JavaScript code for the onClick property. And in this case, we retrieve the h2 element is right above the button by invoking document.getElementById, and we pass along the ID of jsstyled.
+
+Then we change the color of its style to green. So when someone clicks on that button, that JavaScript text will turn from red to green. You'll also observe that the script tag which points to the related JS file is included at the very end.
+
+This means that the JavaScript source will load once all of the other elements defined right above it are loaded on the page. All right, with that done, let us now head over to the JavaScript source itself, where we begin by enabling strict mode.
+
+[Video description begins] He enters the following line of code in Line 1: "use strict"; [Video description ends]
+
+We follow this up by retrieving the text JavaScript at the top of the page. And this we do by using document.getElementById, and we reference the ID of jstitle. So this is assigned to the variable language.
+
+[Video description begins] He enters the code on line 3 that reads as: var language = document.getElementById('jstitle') ; [Video description ends]
+
+And following that, we used a variable representing that element, in order to access its innerHTML value, which we print to the console.
+
+[Video description begins] He highlights the code on line 4 that reads as: console.log("The contents of jstitle: ", language.innerHTML); [Video description ends]
+
+All right, so now make sure that you save down both the HTML, as well as the JavaScript. And then heading over to the web browser, you can load the HTML page. So the page has now been loaded into the window, and we can take a look at some of the different elements which are rendered here.
+
+What we're going to display in the console is the content of JavaScript, which appears right below the top header. Further down, we also have JavaScript appearing in red text, and at the bottom, we have the Click Me button.
+
+All right, let us head over to the console now. And we observe that we have successfully retrieved the element with the ID of jstitle. And we have rendered its innerHTML content to the console.
+
+[Video description begins] The Console displays the following text: The contents of jstitle: JavaScript. [Video description ends]
+
+So this currently has a value of JavaScript. Let us ensure that our button operates as expected, so I'm just going to go ahead and click it. And the red JavaScript text has now turned to green. We can quickly confirm that it wasn't really a fluke, so I'm just going to reload the page.
+
+So the JavaScript text is back to being red. But on hitting the Click Me button, it does turn green once again. All right, so the button works. And let us head back to the source file. And now it's time for us to retrieve all of the bTags.
+
+That is all of the elements containing bold text. And for that we invoke document.getElementByTagName and we pass in the argument of b. So this will return all of the b elements.
+
+[Video description begins] He enters the following line of code in line 6: var bTags = document.getElementsByTagName('b'); [Video description ends]
+
+And we can print all of them out to the console. I'm just going to head over to the browser again, and then hit reload. But before that, just take a look at the HTML on the left, and you'll see that there are three different bold elements within our page.
+
+[Video description begins] The host highlights the following bold elements: "Finding HTML element using the tag name", very, and learn. [Video description ends]
+
+So when we refresh the page we can see that what is printed in the console is an HTMLCollection.
+
+[Video description begins] He highlights the second statement on the Console that reads as: All the <b> tags in the document: HTMLCollection(3) [b, b, b] [Video description ends]
+
+And there are three elements within that collection. And each of this is a bold tag. I'm just going to expand this collection now. And then expand the first of the bold tags. And you can see from the value of its innerHTML property, that this represents the text, Finding HTML elements using the tag name.
+
+[Video description begins] He clicks the expand icon adjacent to the line which reads as: 1: b [Video description ends]
+
+All right, we can expand the second of the bold tags, and viewing its innerHTML attribute, this represents a value of very. And going further down, and then expanding the third of these bold tags, this represents the text of learn. 
+
+[Video description begins] He clicks the expand icon adjacent to code which reads as: 2: b [Video description ends]
+
+So we have now covered how we can retrieve different elements, using either their tag names or their IDs, using JavaScript. And it is also possible for us to edit those elements as we did with our button, which changes the color of the JavaScript text. Heading back to the source though, let us now access an element from the array of bold tags.
+
+[Video description begins] He enters the following line of code in Line 8: console.log("The first <b> tag: ", bTags[0].innnerHTML); [Video description ends]
+
+So here we can reference this as any other array. So here we access the element at index 0 in the bTags array, and then print out its innerHTML to the console. And heading over to the browser, sure enough, this prints out the text, Finding HTML elements using the tag name.
+
+Heading back to the source code. We will now retrieve all of the p elements, that is all of the paragraph tags. And once again we invoke document.getElementByTagName, passing along p as the argument.
+
+[Video description begins] He highlights the following line of code on line 10: var pTags = document.getElementsByTagName('p'); [Video description ends]
+
+And then we will print out the length of this pTags array which will be returned.
+
+[Video description begins] He enters the following line of code in line 11: console.log("\n The number of < p> tags: ", pTags.length); [Video description ends]
+
+And heading over to the browser, we can see that there are a total of two paragraph elements within our DOM.
+
+[Video description begins] He highlights the statement on the console that reads as: The number of <p> tags: 2 [Video description ends]
+
+And you can confirm this by taking a look at the HTML. Heading back to the source file now, it is now time for us to retrieve the element with the ID of jstext.
+
+[Video description begins] He highlights the following line of code: var jstext = document.getElementById('jstext'); [Video description ends]
+
+So this is the one which contains the text JavaScript is very easy to learn. Where the text very and learn appear in bold. So can we retrieve those bold elements from within this jstext element? Well, that is what we're going to try, where we invoke the getElementByTagName function from the jstext object.
+
+[Video description begins] He highlights the following code of line: var jstextbTags = jstext.getElementsByTagName('b'); [Video description ends]
+
+Whereas previously we invoke this from the document object, which returned all of the matching elements from the entire document. In this case, all of the bold elements will only be retrieved from the jstext element. And we will print these out to the console. So reloading the page now gives us an HTML collection of two different bold elements.
+
+[Video description begins] He highlights the line in the console which reads as: Listing the <b> tags in jstext: HTMLCollection(2) [b ,b] [Video description ends]
+
+I won't expand everything here, but if you want, you can take a look at what each of these elements represent. And you'll be able to confirm from their innerHTML that they represent the text very and learn.
+</p>
+</body>
+</html>
+
+

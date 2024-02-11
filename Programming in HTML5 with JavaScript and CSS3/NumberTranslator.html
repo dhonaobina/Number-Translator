@@ -101,11 +101,32 @@
 
             // Translate based on language selection
             var translation = (lang === "French") ? french[number - 1] : german[number - 1];
+            
 
             // Display the result
             document.getElementById('result').textContent = translation;
+            
+
+    }
+
+    function speakWord() {
+            let word = document.getElementById('result').textContent  // Change this to the desired word
+            const utterance = new SpeechSynthesisUtterance(word);
+
+            // Optional: Customize voice, pitch, rate, etc.
+            // utterance.voice = ...;
+            // utterance.pitch = ...;
+            // utterance.rate = ...;
+
+            speechSynthesis.speak(utterance);
+        }  
+
+    function twoFunction() {
+        speakWord();
+        translateNumber();
     }
 </script>
+
 <style>
     /* Custom styling for the box */
     .custom-box {
@@ -136,15 +157,22 @@
                 </div>
                 <div class="col-10">
                 <h5>RESULT:</h5>
-                <h3 id="result"></h3>
+                <h1 id="result"></h1>
                 </div>
-                <div class="col-10">
-                    <button type="button" class="btn btn-success" onclick="translateNumber()">Translate</button>                   
-                </div>       
+                <div class="col-6">
+                    <button type="button" class="btn btn-success" onclick="translateNumber();speakWord()">Translate</button>                   
+                </div>     
+                <div class="col-6">
+                    <button id="speakButton" class="btn btn-success">
+                        <i  id="speakButton" class="fa-solid fa-volume-high" onclick="speakWord()"></i> <!-- Add the speaker icon here -->
+                    </button>  
+                </div>
             </div>
             </div>
 
         </form>
+
+ 
    
 </div>
 </body>

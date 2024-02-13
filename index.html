@@ -144,6 +144,10 @@
     svg {
         color: white
     }
+    #codeglimpselink {
+        text-decoration: none;
+        color: white;
+    }
 </style>
 </head>
 <body>
@@ -157,6 +161,7 @@
                 <div class="col-10">
                     <input class="form-control form-control-lg" type="number" id="number" placeholder="Please enter a number ( 1 - 30 )">
                 </div>
+                <br/>
                 <div class="col-10">
                     <select class="form-select  form-select-sm mb-3" id="language">
                         <option value="French">French</option>
@@ -171,8 +176,8 @@
                     <button type="button" class="btn btn-success" onclick="translateNumber();speakWord()">Translate</button>                   
                 </div>     
                 <div class="col-6">
-                    <button id="speakButton" class="btn btn-success">
-                        <i  id="speakButton" class="fa-solid fa-volume-high" onclick="speakWord()"></i> <!-- Add the speaker icon here -->
+                    <button id="speakButton" class="btn btn-success btn-lg">
+                        <i  id="speakButton" class="fa-solid fa-volume-high btn-lg" onclick="speakWord()"></i> <!-- Add the speaker icon here -->
                     </button>  
                 </div>
             </div>
@@ -186,7 +191,7 @@
       <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
       </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© 2024 CodeGlimpse by Dhona Obina</span>
+      <span class="mb-3 mb-md-0 text-body-secondary"><a id="codeglimpselink" href="https://dhonaobina.github.io">© 2024 CodeGlimpse by Dhona Obina</span></a>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

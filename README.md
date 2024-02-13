@@ -11,4 +11,4 @@ This way I can get a developer position where I can contribute my skills and I'm
 
 Thank you for visiting my GitHub Account :)
 
-Visit Translator app: https://github.com/dhonaobina/Number-Translator
+Visit Translator app: https://dhonaobina.github.io/Number-Translator/
